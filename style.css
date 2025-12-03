@@ -219,6 +219,36 @@ li {
   }
 }
 
+.letters-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 260px;
+}
+
+.letters-input {
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  font-family: var(--font-main);
+  font-size: 0.9rem;
+}
+
+.letters-button {
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid var(--accent);
+  background: #ffffff;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+}
+
+.letters-button:hover {
+  background: #f0f5f3;
+}
+
 .mono {
   font-family: var(--font-mono);
   font-size: 0.85rem;

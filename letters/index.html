@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Letters | Perennial Asset Management</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+  <header>
+    <div class="nav-inner">
+      <a href="../" class="logo">Perennial Asset Management</a>
+      <nav>
+        <ul>
+          <li><a href="../philosophy/">Philosophy</a></li>
+          <li><a href="../portfolio-manager/">Portfolio Manager</a></li>
+          <li><a class="active" href="../letters/">Letters</a></li>
+          <li><a href="../contact/">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h3>Letters</h3>
+
+      <div class="card" id="letters-lock">
+        <h2>Restricted content</h2>
+        <p class="muted small">
+          The Perennial Asset Management letters are intended for existing or
+          prospective partners. Please enter the password provided to you.
+        </p>
+
+        <form id="letters-form" class="letters-form">
+          <label for="letters-password" class="small muted">
+            Password
+          </label>
+          <input
+            type="password"
+            id="letters-password"
+            class="letters-input"
+            autocomplete="off"
+          />
+          <button type="submit" class="letters-button">Unlock</button>
+          <p id="letters-error" class="small muted" style="display:none; color:#b00020;">
+            Incorrect password. Please try again.
+          </p>
+        </form>
+      </div>
+
+      <div class="card" id="letters-content" style="display:none;">
+        <h2>Perennial letters</h2>
+        <p>
+          Below are selected letters discussing our philosophy, portfolio,
+          and long-term results. We encourage partners to read them in order,
+          as they build on one another over time.
+        </p>
+
+        <ul>
+          <li><strong>Introduction to Perennial Asset Management</strong> &mdash; Coming soon.</li>
+          <!-- Add links to PDFs or HTML versions of letters here -->
+        </ul>
+
+        <p class="muted small">
+          Please do not forward or redistribute these materials without
+          permission. They are intended for a limited audience and may not
+          contain complete information about our strategy.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Perennial Asset Management. All rights reserved.
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </footer>
+
+  <script>
+    // *** CHANGE THIS PASSWORD TO WHATEVER YOU WANT ***
+    const LETTERS_PASSWORD = "Omega";
+
+    const form = document.getElementById("letters-form");
+    const input = document.getElementById("letters-password");
+    const error = document.getElementById("letters-error");
+    const content = document.getElementById("letters-content");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (input.value === LETTERS_PASSWORD) {
+        content.style.display = "block";
+        document.getElementById("letters-lock").style.display = "none";
+      } else {
+        error.style.display = "block";
+        input.value = "";
+        input.focus();
+      }
+    });
+  </script>
+</body>
+</html>
