@@ -1,12 +1,12 @@
 :root {
-  --bg: #f5f5f3;
+  --bg: #f7f7f7;
   --fg: #111111;
-  --muted: #555555;
-  --accent: #1f4b3f;
-  --border: #dddddd;
-  --max-width: 900px;
-  --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, sans-serif;
+  --muted: #717171;
+  --accent: #ff385c; /* Airbnb-ish coral */
+  --border: #e5e5e5;
+  --max-width: 1040px;
+  --font-main: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
     "Liberation Mono", "Courier New", monospace;
 }
@@ -33,10 +33,12 @@ a:hover {
   text-decoration: underline;
 }
 
+/* ---------- Layout ---------- */
+
 header {
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.03);
   background: #ffffffcc;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(16px);
   position: sticky;
   top: 0;
   z-index: 10;
@@ -45,7 +47,7 @@ header {
 .nav-inner {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0.75rem 1.5rem;
+  padding: 0.9rem 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -53,9 +55,9 @@ header {
 
 .logo {
   font-weight: 600;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.16em;
+  font-size: 0.8rem;
   text-transform: uppercase;
-  font-size: 0.9rem;
 }
 
 nav ul {
@@ -68,91 +70,79 @@ nav ul {
 }
 
 nav a {
-  padding-bottom: 2px;
+  position: relative;
+  padding-bottom: 4px;
+  color: #222222;
+  text-decoration: none;
 }
 
-nav a.active {
-  font-weight: 600;
-  border-bottom: 1px solid var(--accent);
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 999px;
+  transition: width 0.18s ease-out;
+}
+
+nav a:hover::after,
+nav a.active::after {
+  width: 100%;
 }
 
 main {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 2.5rem 1.5rem 3rem;
+  padding: 3rem 1.5rem 3.5rem;
 }
 
 section {
   margin-bottom: 3rem;
 }
 
+/* ---------- Typography ---------- */
+
 h1,
 h2,
 h3 {
-  font-weight: 500;
-  letter-spacing: 0.02em;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 0;
 }
 
 h1 {
-  font-size: 2.2rem;
+  font-size: 2.6rem;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: var(--fg);
   margin-bottom: 0.75rem;
 }
 
 h2 {
   font-size: 1.5rem;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: var(--fg);
   margin-bottom: 0.75rem;
 }
 
 h3 {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+  margin-bottom: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-weight: 600;
+  letter-spacing: 0.18em;
   color: var(--muted);
 }
 
-.hero {
-  padding: 2rem 0 1rem;
-}
-
-.hero-tagline {
-  font-size: 1.05rem;
-  color: var(--muted);
-  max-width: 36rem;
-}
-
-.pill-row {
-  margin-top: 1rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.pill {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  border-radius: 999px;
-  padding: 0.3rem 0.75rem;
-  border: 1px solid var(--border);
-  color: var(--muted);
-  background: #ffffff;
-}
-
-.card {
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  background: #ffffff;
-  padding: 1.5rem 1.75rem;
-  margin-bottom: 1.5rem;
-}
-
-.two-col {
-  display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-  gap: 2.5rem;
-  align-items: flex-start;
+p {
+  margin-top: 0;
+  margin-bottom: 0.7rem;
 }
 
 .muted {
@@ -166,61 +156,106 @@ h3 {
 ul {
   padding-left: 1.1rem;
   margin-top: 0.35rem;
+  margin-bottom: 0.7rem;
 }
 
 li {
   margin-bottom: 0.25rem;
 }
 
-.bio-name {
-  font-weight: 600;
-  margin-bottom: 0.25rem;
+/* ---------- Hero ---------- */
+
+.hero {
+  padding: 3rem 0 2.5rem;
 }
 
-.bio-layout {
+.hero-tagline {
+  font-size: 1.1rem;
+  color: var(--muted);
+  max-width: 36rem;
+}
+
+/* ---------- Pills ---------- */
+
+.pill-row {
+  margin-top: 1rem;
   display: flex;
-  gap: 1.75rem;
-  align-items: flex-start;
   flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
-.bio-photo-wrap {
-  flex: 0 0 140px;
+.pill {
+  font-size: 0.75rem;
+  text-transform: none;
+  letter-spacing: 0.04em;
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid #dddddd;
+  background: #ffffff;
+  color: #222222;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.07);
+  transition: box-shadow 0.15s ease-out, transform 0.15s ease-out,
+    border-color 0.15s ease-out;
 }
 
-.bio-text-intro {
-  flex: 1 1 220px;
+.pill:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  border-color: #cccccc;
 }
 
-.profile-photo {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  object-fit: contain;
-  background: #fafafa; /* clean fill behind rectangular image */
-  padding: 4px;        /* subtle buffer */
-  border: 1px solid var(--border);
-  display: block;
+/* ---------- Cards & Grids ---------- */
+
+.card {
+  border-radius: 18px;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  background: #ffffff;
+  padding: 1.8rem 2rem;
+  margin-bottom: 1.8rem;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.04);
 }
 
+.two-col {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 2.5rem;
+  align-items: flex-start;
+}
 
-/* Optional: tighten top spacing on bio name */
+/* ---------- Bio / Portfolio Manager ---------- */
+
 .bio-name {
   font-weight: 600;
   margin-bottom: 0.15rem;
 }
 
-/* Mobile tweak */
-@media (max-width: 600px) {
-  .bio-layout {
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .bio-photo-wrap {
-    flex: 0 0 auto;
-  }
+.bio-layout {
+  display: flex;
+  gap: 1.8rem;
+  align-items: center;
+  flex-wrap: wrap;
 }
+
+.bio-photo-wrap {
+  flex: 0 0 auto;
+}
+
+.bio-text-intro {
+  flex: 1 1 260px;
+}
+
+.profile-photo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  display: block;
+}
+
+/* ---------- Letters (password form) ---------- */
 
 .letters-form {
   display: flex;
@@ -252,6 +287,8 @@ li {
   background: #f0f5f3;
 }
 
+/* ---------- Misc ---------- */
+
 .mono {
   font-family: var(--font-mono);
   font-size: 0.85rem;
@@ -265,6 +302,8 @@ footer {
   text-align: center;
 }
 
+/* ---------- Responsive ---------- */
+
 @media (max-width: 720px) {
   .two-col {
     grid-template-columns: minmax(0, 1fr);
@@ -272,7 +311,7 @@ footer {
   }
 
   h1 {
-    font-size: 1.8rem;
+    font-size: 2.0rem;
   }
 
   .nav-inner {
@@ -284,5 +323,16 @@ footer {
   nav ul {
     flex-wrap: wrap;
     gap: 0.75rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .bio-layout {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .bio-photo-wrap {
+    flex: 0 0 auto;
   }
 }
