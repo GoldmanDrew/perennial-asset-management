@@ -177,16 +177,47 @@ li {
   margin-bottom: 0.25rem;
 }
 
+.bio-layout {
+  display: flex;
+  gap: 1.75rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.bio-photo-wrap {
+  flex: 0 0 140px;
+}
+
+.bio-text-intro {
+  flex: 1 1 220px;
+}
+
 .profile-photo {
-  width: 90px;
-  height: 130px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   object-fit: cover;
   display: block;
-  margin-bottom: 1rem;
   border: 1px solid var(--border);
 }
 
+/* Optional: tighten top spacing on bio name */
+.bio-name {
+  font-weight: 600;
+  margin-bottom: 0.15rem;
+}
+
+/* Mobile tweak */
+@media (max-width: 600px) {
+  .bio-layout {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .bio-photo-wrap {
+    flex: 0 0 auto;
+  }
+}
 
 .mono {
   font-family: var(--font-mono);
