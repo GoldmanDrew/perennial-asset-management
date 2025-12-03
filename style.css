@@ -178,8 +178,8 @@ li {
 }
 
 .profile-photo {
-  width: 20px;
-  height: 30px;
+  width: 90px;
+  height: 130px;
   border-radius: 50%;
   object-fit: cover;
   display: block;
