@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Perennial Asset Management</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Perennial Asset Management is a long-term, concentrated, value-oriented investment manager focused on separately managed accounts."
+  />
+  <style>
+    :root {
+      --bg: #f5f5f3;
+      --fg: #111111;
+      --muted: #555555;
+      --accent: #1f4b3f;
+      --border: #dddddd;
+      --max-width: 900px;
+      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-main);
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      background: #ffffffcc;
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.25rem;
+      margin: 0;
+      padding: 0;
+      font-size: 0.9rem;
+    }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 3rem;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .hero {
+      padding: 2rem 0 1rem;
+    }
+
+    .hero-tagline {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 36rem;
+    }
+
+    .pill-row {
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .pill {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      border-radius: 999px;
+      padding: 0.3rem 0.75rem;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      background: #ffffff;
+    }
+
+    .card {
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: #ffffff;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 2.5rem;
+      align-items: flex-start;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .small {
+      font-size: 0.85rem;
+    }
+
+    ul {
+      padding-left: 1.1rem;
+      margin-top: 0.35rem;
+    }
+
+    li {
+      margin-bottom: 0.25rem;
+    }
+
+    .bio-name {
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .mono {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.5rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 720px) {
+      .two-col {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.75rem;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.35rem;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-inner">
+      <div class="logo">Perennial Asset Management</div>
+      <nav>
+        <ul>
+          <li><a href="#philosophy">Philosophy</a></li>
+          <li><a href="#approach">Approach</a></li>
+          <li><a href="#pm">Portfolio Manager</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <h1>Long-term, concentrated, value-oriented investing.</h1>
+      <p class="hero-tagline">
+        Perennial Asset Management is an independent investment firm focused on
+        separately managed accounts. We seek to compound our clients&rsquo; capital
+        over decades by owning a concentrated portfolio of high-quality
+        businesses purchased at sensible prices.
+      </p>
+      <div class="pill-row">
+        <span class="pill">Long-Term</span>
+        <span class="pill">Concentrated</span>
+        <span class="pill">Value</span>
+        <span class="pill">Owner-Mindset</span>
+      </div>
+    </section>
+
+    <!-- Philosophy -->
+    <section id="philosophy">
+      <h3>Philosophy</h3>
+      <div class="card">
+        <h2>Business owners, not stock traders.</h2>
+        <p>
+          We approach every investment as if we are buying a piece of a private
+          business, not a trading symbol. Our goal is to grow our partners&rsquo;
+          wealth through the power of long-term compounding, while striving to
+          avoid permanent loss of capital.
+        </p>
+        <p class="muted small">
+          We would rather own a handful of outstanding businesses for many
+          years than constantly trade in and out of names about which we have
+          little conviction.
+        </p>
+      </div>
+
+      <div class="two-col">
+        <div class="card">
+          <h2>What we look for</h2>
+          <p class="muted small">
+            While each investment is unique, most share a common pattern:
+          </p>
+          <ul>
+            <li>Durable competitive advantages and strong business economics</li>
+            <li>Capable, aligned, and honest management teams</li>
+            <li>Reinvestment opportunities at attractive incremental returns</li>
+            <li>Purchase price that embeds a meaningful margin of safety</li>
+          </ul>
+          <p class="muted small">
+            We prefer businesses that can grow intrinsic value over time
+            without requiring heroic assumptions or constant financial
+            engineering.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>How we think about risk</h2>
+          <p>
+            Risk, to us, is not short-term volatility. It is the possibility of
+            permanent capital loss and the erosion of purchasing power over
+            time.
+          </p>
+          <ul>
+            <li>We are willing to look wrong in the short run to be right over the long run.</li>
+            <li>We avoid leverage at the portfolio level.</li>
+            <li>We prefer simplicity over complexity wherever possible.</li>
+          </ul>
+          <p class="muted small">
+            We pair fundamental analysis with quantitative tools to understand
+            downside scenarios, position sizing, and portfolio resilience.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Approach -->
+    <section id="approach">
+      <h3>Approach</h3>
+      <div class="card">
+        <h2>Separately managed accounts</h2>
+        <p>
+          Perennial Asset Management manages client capital through separately
+          managed accounts (SMAs). Each client maintains a brokerage account in
+          their own name, granting us discretionary authority to invest
+          according to our strategy.
+        </p>
+        <ul>
+          <li>Full transparency into holdings and activity</li>
+          <li>Assets remain in the client&rsquo;s custody at a third-party broker</li>
+          <li>Taxable events are visible at the individual account level</li>
+        </ul>
+      </div>
+
+      <div class="two-col">
+        <div class="card">
+          <h2>Research and decision-making</h2>
+          <ul>
+            <li>
+              <strong>Bottom-up:</strong> We build our portfolio one business at a
+              time, based on fundamental research.
+            </li>
+            <li>
+              <strong>Concentrated:</strong> We typically hold a focused group of
+              high-conviction investments, rather than hundreds of small
+              positions.
+            </li>
+            <li>
+              <strong>Long-horizon:</strong> Our default holding period is measured
+              in years. Activity is driven by changes in intrinsic value or
+              price, not by market noise.
+            </li>
+          </ul>
+          <p class="muted small">
+            Patience is a competitive advantage. We are comfortable doing very
+            little when prices and opportunities do not meet our standards.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>Alignment and incentives</h2>
+          <ul>
+            <li>The Portfolio Manager invests personal capital alongside clients.</li>
+            <li>We aim to keep our structure simple and our fees transparent.</li>
+            <li>We measure success over rolling five- to ten-year periods, not quarters.</li>
+          </ul>
+          <p class="muted small">
+            Our objective is to treat clients&rsquo; capital with the same care and
+            attention as we do our own.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Manager -->
+    <section id="pm">
+      <h3>Portfolio Manager</h3>
+      <div class="card">
+        <div class="bio-name">Drew Goldman</div>
+        <p class="muted small">Portfolio Manager, Perennial Asset Management</p>
+        <p>
+          Drew Goldman is the Portfolio Manager of Perennial Asset Management,
+          where he oversees all investment activity across separately managed
+          accounts and long-term compounding portfolios. Perennial Asset
+          Management applies a concentrated, high-quality, value-driven
+          investment philosophy with a multi-decade horizon.
+        </p>
+        <p>
+          Before founding Perennial Asset Management, Drew served as an options
+          market maker and Quant Trader at Maven Securities. At Maven, he built
+          and launched the firm&rsquo;s Russell 2000 and Nasdaq options
+          market-making operations, developed systematic and fundamental trading
+          strategies, and designed the risk models and quoting systems used on
+          the desk.
+        </p>
+        <p>
+          Drew is a committed student of Warren Buffett and Charlie Munger,
+          integrating their principles of intrinsic value, capital allocation,
+          and owner-oriented investing with his quantitative background in risk
+          management, convexity, and statistical edge. This combination forms
+          the foundation of Perennial Asset Management&rsquo;s disciplined,
+          long-duration investment process.
+        </p>
+        <p>
+          He holds a B.S. in Computer Science and a B.A. in Economics (Finance
+          concentration) from the University of Virginia.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact / Disclaimers -->
+    <section id="contact">
+      <h3>Contact</h3>
+      <div class="card">
+        <h2>Get in touch</h2>
+        <p>
+          For inquiries about Perennial Asset Management and our investment
+          approach, please contact:
+        </p>
+        <p class="mono">
+          Email: info@perennialasset.com<br />
+          Location: [City], [State]
+        </p>
+        <p class="muted small">
+          We currently focus on long-term partnerships with individuals, families,
+          and like-minded institutions who share our philosophy and time horizon.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Important information</h2>
+        <p class="small muted">
+          This website is for informational purposes only and does not constitute
+          an offer to sell or a solicitation of an offer to buy any security or
+          investment product in any jurisdiction. Any such offer or solicitation
+          will be made only by means of formal offering documents and only in
+          jurisdictions where permitted by law.
+        </p>
+        <p class="small muted">
+          Investing involves risk, including the possible loss of principal.
+          Past performance is not indicative of future results. Prospective
+          clients should conduct their own independent analysis and consult
+          their financial, legal, and tax advisors before making any investment
+          decision.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Perennial Asset Management. All rights reserved.
+    <script>
+      document.getElementById("year").textContent =
+        new Date().getFullYear();
+    </script>
+  </footer>
+</body>
+</html>
