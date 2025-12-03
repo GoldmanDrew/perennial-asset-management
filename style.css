@@ -193,13 +193,16 @@ li {
 }
 
 .profile-photo {
-  width: 140px;
-  height: 140px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
-  object-fit: cover;
-  display: block;
+  object-fit: contain;
+  background: #fafafa; /* clean fill behind rectangular image */
+  padding: 4px;        /* subtle buffer */
   border: 1px solid var(--border);
+  display: block;
 }
+
 
 /* Optional: tighten top spacing on bio name */
 .bio-name {
