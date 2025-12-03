@@ -6,16 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="../style.css" />
 </head>
+
 <body>
   <header>
     <div class="nav-inner">
       <a href="../index.html" class="logo">Perennial Asset Management</a>
       <nav>
         <ul>
-          <li><a href="philosophy/">Philosophy</a>class="active">Philosophy</a></li>
-          <li><a href="approach/">Approach</a>class="active">Approach</a></li>
-          <li><a href="portfolio-manager/">Portfolio Manager</a>class="active">Portfolio Manager</a></li>
-          <li><a href="contact/">Contact</a>class="active">Contact</a></li>
+          <li><a class="active" href="../philosophy/">Philosophy</a></li>
+          <li><a href="../approach/">Approach</a></li>
+          <li><a href="../portfolio-manager/">Portfolio Manager</a></li>
+          <li><a href="../contact/">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -24,55 +25,51 @@
   <main>
     <section>
       <h3>Philosophy</h3>
+
       <div class="card">
         <h2>Business owners, not stock traders.</h2>
         <p>
           We approach every investment as if we are buying a piece of a private
           business, not a trading symbol. Our goal is to grow our partners’
-          wealth through the power of long-term compounding, while striving to
-          avoid permanent loss of capital.
+          wealth through the power of long-term compounding while avoiding
+          permanent loss of capital.
         </p>
         <p class="muted small">
           We would rather own a handful of outstanding businesses for many
-          years than constantly trade in and out of names about which we have
-          little conviction.
+          years than trade frequently in businesses we understand less well.
         </p>
       </div>
 
       <div class="two-col">
         <div class="card">
           <h2>What we look for</h2>
-          <p class="muted small">
-            While each investment is unique, most share a common pattern:
-          </p>
+          <p class="muted small">Common patterns across our investments:</p>
           <ul>
-            <li>Durable competitive advantages and strong business economics</li>
-            <li>Capable, aligned, and honest management teams</li>
-            <li>Reinvestment opportunities at attractive incremental returns</li>
-            <li>Purchase price that embeds a meaningful margin of safety</li>
+            <li>Durable competitive advantages</li>
+            <li>High returns on invested capital</li>
+            <li>Aligned, capable, and honest management</li>
+            <li>Reinvestment opportunities at attractive returns</li>
+            <li>Purchase price with a margin of safety</li>
           </ul>
           <p class="muted small">
-            We prefer businesses that can grow intrinsic value over time
-            without requiring heroic assumptions or constant financial
-            engineering.
+            We favor simple, understandable businesses that can compound value
+            for long periods of time.
           </p>
         </div>
 
         <div class="card">
           <h2>How we think about risk</h2>
           <p>
-            Risk, to us, is not short-term volatility. It is the possibility of
-            permanent capital loss and the erosion of purchasing power over
-            time.
+            Risk is not volatility. Risk is the permanent impairment of capital.
           </p>
           <ul>
-            <li>We are willing to look wrong in the short run to be right over the long run.</li>
+            <li>We use conservative assumptions and focus on downside first.</li>
             <li>We avoid leverage at the portfolio level.</li>
-            <li>We prefer simplicity over complexity wherever possible.</li>
+            <li>We only invest within our circle of competence.</li>
           </ul>
           <p class="muted small">
-            We pair fundamental analysis with quantitative tools to understand
-            downside scenarios, position sizing, and portfolio resilience.
+            Our quantitative background helps us size positions, understand tail
+            outcomes, and maintain discipline under uncertainty.
           </p>
         </div>
       </div>
@@ -82,4 +79,8 @@
   <footer>
     © <span id="year"></span> Perennial Asset Management. All rights reserved.
     <script>
-      document.getElementById("year").textContent = new Date().getFu
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </footer>
+</body>
+</html>
